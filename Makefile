@@ -6,7 +6,8 @@ SRCS		=	\
 				mind_add.c \
 				mind_free.c \
 				mind_init.c \
-				mind_malloc.c
+				mind_malloc.c \
+				mind_remove.c
 
 _OBJS		=	${SRCS:.c=.o}
 OBJS		=	$(addprefix build/, $(_OBJS))

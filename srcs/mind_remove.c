@@ -6,11 +6,13 @@
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 15:15:46 by jmaia             #+#    #+#             */
-/*   Updated: 2022/04/16 15:20:23 by jmaia            ###   ########.fr       */
+/*   Updated: 2022/04/16 15:26:18 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mind.h"
+
+#include <stdlib.h>
 
 void	mind_remove(t_mind *mind, void *ptr)
 {
@@ -33,6 +35,6 @@ void	mind_remove(t_mind *mind, void *ptr)
 			is_found = 1;
 		}
 		prev = cur;
-		cur = cur->begin;
+		cur = cur->next;
 	}
 }
