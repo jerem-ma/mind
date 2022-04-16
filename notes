@@ -12,3 +12,6 @@ Cette structure il faudrait l'init au début
 - mind_add (Ajoute un élément dans la liste préalablement malloc)
 - mind_remove (Retire un élément de la liste sans le free)
 - mind_blow (Free mind + free de tous les éléments)
+
+Mais du coup il se passe quoi si le malloc de mind_malloc foire ?
+Boh, go dab
