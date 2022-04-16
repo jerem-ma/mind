@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mind_malloc.c                                      :+:      :+:    :+:   */
+/*   mind_free.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 15:02:08 by jmaia             #+#    #+#             */
-/*   Updated: 2022/04/16 15:10:20 by jmaia            ###   ########.fr       */
+/*   Created: 2022/04/16 15:08:58 by jmaia             #+#    #+#             */
+/*   Updated: 2022/04/16 15:12:11 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,8 @@
 
 #include <stdlib.h>
 
-void	*mind_malloc(t_mind *mind, size_t size)
+void	mind_free(t_mind *mind, void *ptr)
 {
-	void	*ptr;
-
-	ptr = malloc(size);
-	if (!ptr)
-		mind_blow(mind);
-	else
-		mind_add(mind, ptr);
-	return (ptr);
+	mind_remove(mind, ptr);
+	free(ptr);
 }
