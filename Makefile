@@ -4,6 +4,7 @@ SRCS		=	\
 				lists/ft_lstadd_front.c \
 				lists/ft_lstnew.c \
 				mind_init.c \
+				mind_malloc.c
 
 _OBJS		=	${SRCS:.c=.o}
 OBJS		=	$(addprefix build/, $(_OBJS))
