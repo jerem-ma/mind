@@ -4,6 +4,7 @@ SRCS		=	\
 				lists/ft_lstadd_front.c \
 				lists/ft_lstnew.c \
 				mind_add.c \
+				mind_blow.c \
 				mind_free.c \
 				mind_init.c \
 				mind_malloc.c \
