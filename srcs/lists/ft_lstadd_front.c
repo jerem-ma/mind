@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mind.h                                             :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 11:03:54 by jmaia             #+#    #+#             */
-/*   Updated: 2022/04/16 14:59:36 by jmaia            ###   ########.fr       */
+/*   Created: 2021/11/24 16:05:48 by jmaia             #+#    #+#             */
+/*   Updated: 2022/04/16 14:58:34 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MIND_H
-# define MIND_H
+#include "lists.h"
 
-# include "lists.h"
-
-typedef struct s_mind
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list	*begin;
-}	t_mind;
-
-#endif
+	new->next = *lst;
+	*lst = new;
+}

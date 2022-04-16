@@ -1,6 +1,9 @@
 NAME		=	mind.a
 
 SRCS		=	\
+				lists/ft_lstadd_front.c \
+				lists/ft_lstnew.c \
+				mind_init.c \
 
 _OBJS		=	${SRCS:.c=.o}
 OBJS		=	$(addprefix build/, $(_OBJS))
@@ -10,6 +13,7 @@ DEPS		=	$(OBJS:%.o=%.d)
 CC			=	cc
 CFLAGS		=	-g3 -Wall -Werror -Wextra
 INCLUDE		=	\
+				-I includes/
 
 LIBS		=
 LIBS_EXT	=

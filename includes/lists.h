@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mind.h                                             :+:      :+:    :+:   */
+/*   lists.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 11:03:54 by jmaia             #+#    #+#             */
-/*   Updated: 2022/04/16 14:59:36 by jmaia            ###   ########.fr       */
+/*   Created: 2022/04/16 14:56:42 by jmaia             #+#    #+#             */
+/*   Updated: 2022/04/16 14:57:23 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MIND_H
-# define MIND_H
+#ifndef LISTS_H
+# define LISTS_H
 
-# include "lists.h"
-
-typedef struct s_mind
+typedef struct s_list
 {
-	t_list	*begin;
-}	t_mind;
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 #endif

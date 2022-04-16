@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mind.h                                             :+:      :+:    :+:   */
+/*   mind_init.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaia <jmaia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/16 11:03:54 by jmaia             #+#    #+#             */
-/*   Updated: 2022/04/16 14:59:36 by jmaia            ###   ########.fr       */
+/*   Created: 2022/04/16 14:51:45 by jmaia             #+#    #+#             */
+/*   Updated: 2022/04/16 14:59:45 by jmaia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MIND_H
-# define MIND_H
+#include "mind.h"
 
-# include "lists.h"
+#include <stdlib.h>
 
-typedef struct s_mind
+t_mind	*mind_init(void)
 {
-	t_list	*begin;
-}	t_mind;
+	t_mind	*mind;
 
-#endif
+	mind = malloc(sizeof(*mind));
+	if (!mind)
+		return (0);
+	mind->begin = malloc(sizeof(*mind->begin));
+	if (!mind->begin)
+	{
+		free(mind);
+		return (0);
+	}
+	return (mind);
+}
