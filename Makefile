@@ -15,8 +15,9 @@ OBJS		=	$(addprefix build/, $(_OBJS))
 DEPS		=	$(OBJS:%.o=%.d)
 
 
+AR			=	ar
 CC			=	cc
-CFLAGS		=	-g3 -Wall -Werror -Wextra
+CFLAGS		=	-Wall -Werror -Wextra
 INCLUDE		=	\
 				-I includes/
 
@@ -33,7 +34,7 @@ build/%.o	:	srcs/%.c
 	$(CC) ${CFLAGS} ${INCLUDE} -c $< -o $@
 
 $(NAME)	:	$(OBJS) $(LIBS)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBS) $(LIBS_EXT) -o $(NAME)
+	$(AR) -rc $(NAME) $(OBJS)
 
 $(LIBS)	:	FORCE
 	@for lib in $(LIBS); do\
